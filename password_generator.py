@@ -2,15 +2,16 @@ import random
 import string
 
 s_letters = list(string.ascii_lowercase)
-s_letters.remove('l') # remove small letter l
-s_letters.remove('o') # remove small letter o
+s_letters.remove('l') # Exclude small letter l
+s_letters.remove('o') # Exclude small letter o
 
 # choose 4 random small letter characters using list comprehension
 random_small_ch = [random.choice(s_letters) for i in range(4)]  
 # print(random_small_ch) # ['d', 'c', 'm', 'm']
 
 b_letters = list(string.ascii_uppercase)
-b_letters.remove('O') # remove capotal letter O
+b_letters.remove('O') # Exclude capital letter O
+b_letters.remove('I') # Exclude capital letter I
 
 random_cap_ch = [random.choice(b_letters) for i in range(4)]
 # print(random_cap_ch) # ['B', 'H', 'V', 'I']
