@@ -2,7 +2,7 @@
 Replace your weak passwords with strong, randomly generated passwords
 
 ### Settings
-- Password Length 12 (customizable)
+- Minimum Password Length 8 (customizable)
 - Allow Numbers (2-9)
 - Allow Lowercase (abc)
 - Allow Uppercase (ABC)
