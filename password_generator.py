@@ -16,7 +16,25 @@ special_chars = "@#$&_-()=%*:/!?+."
 
 pass_raw = lower_case + upper_case + numbers + special_chars
 
-length = int(input("How Many Characters Do You Want Your Password To Be: "))
+length = input("How Many Characters Do You Want Your Password To Be: ")
+
+while True:
+
+    try:
+        length = int(length)
+
+        if length < 8:
+            print("Your number should be atleast 8!")
+
+            length = input("Please, enter your number again: ")
+        else:
+            break
+
+    except:
+        print("Please, enter numbers only.")
+
+        length = input("How many characters do you want in your password? ")
+
 password = "".join(random.sample(pass_raw, length))
 
 print("Password: " + password)
