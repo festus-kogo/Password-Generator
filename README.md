@@ -1,5 +1,6 @@
 ## Generate a Strong Password!
 Replace your weak passwords with strong, randomly generated passwords
+Generate a password that contains a unique character only!
 
 ### Settings
 - Minimum Password Length 8 (customizable)
