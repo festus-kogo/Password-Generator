@@ -1,40 +1,42 @@
-import random, string
+import random
+import string
 
-lower = list(string.ascii_lowercase)
-lower.remove('l') # Exclude l
-lower.remove('o') # Exclude o
-lower_case = "".join(lower)
+# ABCDEFGHIJKLMNOPQRSTUVWXYZ
+def upperCase():
+    upper_case = string.ascii_uppercase
+    return upper_case    
 
-upper = list(string.ascii_uppercase)
-upper.remove('O') # Exclude O
-upper.remove('I') # Exclude I
-upper_case = "".join(upper)
+# abcdefghijklmnopqrstuvwxyz
+def lowerCase():
+    lower_case = string.ascii_lowercase
+    return lower_case
 
-numbers = "23456789" # Exclude 0 and 1
+# 0123456789
+def numbers():
+    numbers = string.digits
+    return numbers
 
-special_chars = "@#$&_-()=%*:/!?+."
+# !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+def symbols():
+    symbols = string.punctuation
+    return symbols
 
-pass_raw = lower_case + upper_case + numbers + special_chars
+def passwordGenerator(length):
+    password = []
 
-length = input("How Many Characters Do You Want Your Password To Be: ")
+    for i in range(length):
+        password.append(random.choice(list(upperCase() + lowerCase() + numbers() + symbols())))
+        
+    return "".join(password)
 
-while True:
 
-    try:
-        length = int(length)
+length = input("How many characters do you want in your password? ")
 
-        if length < 8:
-            print("Your number should be atleast 8!")
-
-            length = input("Please, enter your number again: ")
-        else:
-            break
-
-    except:
-        print("Please, enter numbers only.")
-
-        length = input("How many characters do you want in your password? ")
-
-password = "".join(random.sample(pass_raw, length))
-
-print("Password: " + password)
+try:
+    length = int(length)
+            
+except ValueError as ve:
+    print("You need a posotive number for the length of your password")
+    print(f"\'{length}\' is not a positive number")
+else:
+    print(f"Password: {passwordGenerator(length)}")
