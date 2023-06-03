@@ -34,9 +34,9 @@ length = input("How many characters do you want in your password? ")
 
 try:
     length = int(length)
-            
+
 except ValueError as ve:
-    print("You need a posotive number for the length of your password")
+    print("You need a positive number for the length of your password")
     print(f"\'{length}\' is not a positive number")
 else:
     print(f"Password: {passwordGenerator(length)}")
